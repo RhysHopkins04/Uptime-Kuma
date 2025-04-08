@@ -1,6 +1,6 @@
 # Uptime Kuma Deployment (Traefik + Cloudflare DNS)
 
-This repository contains a Docker Compose setup for deploying [Uptime Kuma](https://github.com/louislam/uptime-kuma) behind a [Traefik](https://doc.traefik.io/traefik/) reverse proxy, using **Cloudflare DNS** for automatic SSL via Let's Encrypt.
+This repository contains a Docker Compose setup for deploying [Uptime Kuma](https://github.com/louislam/uptime-kuma) behind a [Traefik](https://doc.traefik.io/traefik/) reverse proxy, using **Cloudflare DNS-01** for automatic SSL via Let's Encrypt.
 
 ---
 
@@ -17,9 +17,9 @@ This repository contains a Docker Compose setup for deploying [Uptime Kuma](http
 ## 📁 Folder Structure
 
 ```
-uptime-kuma/
+Uptime-Kuma/
 ├── docker-compose.yml         # Main stack config
-├── .env                       # Environment secrets/config (not committed)
+├── .env                       # Environment secrets/config (Ensure you do not commit one with valid values)
 ├── letsencrypt/               # SSL cert storage for Traefik
 │   └── acme.json              # Let's Encrypt cert data
 ├── data/                      # Uptime Kuma data
@@ -54,17 +54,13 @@ uptime-kuma/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/docker-uptime-kuma.git
-cd docker-uptime-kuma
+git clone https://github.com/RhysHopkins04/Uptime-Kuma.git
+cd Uptime-Kuma
 ```
 
-### 2. Create `.env` File
+### 2. Edit `.env` File
 
-```env
-CF_DNS_API_TOKEN=your-cloudflare-token
-KUMA_DOMAIN=status.yourdomain.com
-```
-
+> Replace `your-cloudflare-token` with your Cloudflare API Token created earlier.
 > Replace `status.yourdomain.com` with your desired monitoring subdomain.
 
 ### 3. Prepare SSL Storage
